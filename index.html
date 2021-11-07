@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countdown Timer</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                background-image: url(deepavali.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin:0;
+                overflow: hidden;
+            }
+            h1{
+                font-weight: normal;
+                font-size: 60px;
+                margin: -150px 0 40px;
+                color:blue;
+            }
+            .Countdown
+            {
+                display: flex;
+                transform: scale(2);
+                color:gold;
+            }
+            
+            
+           
+
+        </style>
+    </head>
+    <body>
+        <h1>HAPPY DIWALI</h1>
+        
+        <div id="Countdown" class="Countdown">
+           
+        </div>
+        <script>
+            var dest=new Date("oct 3,2022 10:00:00").getTime();
+            var x=setInterval(function() {
+            var now=new Date().getTime();
+            var diff=dest-now;
+            var days=Math.floor (diff /(1000*60*60*24));
+            var hours=Math.floor((diff %(1000*60*60*24))/(1000*60*60));
+            var minutes=Math.floor((diff %(1000*60*60))/(1000*60));
+            var seconds=Math.floor((diff %(1000*60))/1000);
+            document.getElementById("Countdown").innerHTML=days+"d"+ hours+"hrs:"+minutes+"m:"+seconds+"s"
+            },1000);
+
+        </script>
+    </body>
+</html>
